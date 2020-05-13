@@ -166,7 +166,7 @@ public class DepthFirstSearch {
         node.left.right = new Node(5);
       //  System.out.println(" Inorder");
 
-        //inOrder(node);
+        //inOrder(node);k
        // preOrder(node);
 
         postOrder(node);

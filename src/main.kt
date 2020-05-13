@@ -1,79 +1,79 @@
 import JavaCode.*
+import java.util.Scanner;
 
 fun intersection(nums1: IntArray, nums2: IntArray): IntArray {
     var s1 = mutableSetOf<Int>();
     var s = mutableSetOf<Int>();
-    for( num in nums1)
+    for (num in nums1)
         s1.add(num);
-    for(num2: Int in nums2)
-    {
-        if(s1.contains(num2))
+    for (num2: Int in nums2) {
+        if (s1.contains(num2))
             s.add(num2);
     }
     var arr = IntArray(s.size);
     var i = 0;
-    for( n in s)
+    for (n in s)
         arr[i] = n;
     return arr;
-
 }
 
-fun main(){
+fun main() {
+    System.out.println("BreadFirstSearch 1");
+    System.out.println("DeptFirstSearch 2");
+    System.out.println("DevideTwoInt 3");
+    System.out.println("SubArraySum 4");
+    System.out.println("KClosestPoint 5");
+    System.out.println("StackExample 6");
+    System.out.println("QueueExample 7");
+    System.out.println("Lamda Express 8");
+    System.out.println("Stream 9");
+
+    var case: Int;
+    var reader = Scanner(System.`in`);
+    println("\n\nEnter case\n\n");
+    var i = reader.nextInt();
     var myCollection = Algorithm();
-    //myCollection.sumTwoString();
-    //var isValinDrom = myCollection.validPalindrome(
-    //        "aguokepatgbnvfqmgmlcupuufxoohdfpgjdmysgvhmvffcnqxjjxqncffvmhvgsymdjgpfdhooxfuupuculmgmqfvnbgtapekouga");
-   // System.out.println(isValinDrom);
-    var bfs = BreadthFirstSearch();
-    //bfs.printTree();
-    var dfs = DepthFirstSearch();
-    dfs.printDFS();
 
-    var stackExample = StackExample();
-    //stackExample.printStack();
-    var queueExample = QueueExample();
-    //queueExample.printQueue();
-    var divideTwoInt = DevideTwoInt();
-    divide(10, 3);
-}
-
-fun divide(dividend: Int, divisor: Int): Int {
-    var isNegative:Boolean = false
-    if(dividend < 0 && divisor > 0 || dividend > 0 && divisor < 0)
-        isNegative = true;
-    var dividendAbs: Long = Math.abs(dividend.toLong());
-    var divisorAbs: Long = Math.abs(divisor.toLong());
-    if(divisorAbs == 1.toLong()){
-        if(isNegative)
-            return -dividendAbs.toInt();
-        else{
-            if(dividendAbs >= Int.MAX_VALUE)
-                return Int.MAX_VALUE;
-            else
-                return dividendAbs.toInt();
+    when (i) {
+        1 -> {
+            var bfs = BreadthFirstSearch();
+            bfs.printTree()
+        }
+        2 -> {
+            var dfs = DepthFirstSearch();
+            dfs.printDFS();
+        }
+        3 -> {
+            var divideTwoInt = DevideTwoInt();
+        }
+        4 -> {
+            var subArraySum = SubArraySum();
+        }
+        5 -> {
+            var kClosestPoint = KClosestPoint()
+            kClosestPoint.example()
+        }
+        6 -> {
+            var stackExample = StackExample()
+        }
+        7 -> {
+            var queueExample = QueueExample();
+        }
+        8 -> {
+            var lambdaExp = LambdaExp();
+            lambdaExp.callImplementation();
+            lambdaExp.lambdaWithoutParameter();
+            lambdaExp.lambdaWithParameter();
+        }
+        9 -> {
+            var stream = StreamExp();
+            stream.printStream();
         }
     }
-    var quotion = 1;
-    var result = quotion;5
-    var track = divisorAbs;
-    while(track + track <= dividendAbs){
-        track += track;
-        quotion += quotion;
-        result += quotion;
-        if(track + track > dividendAbs){
-            if(dividendAbs - track >= divisorAbs){
-                dividendAbs = dividendAbs - track;
-                track = divisorAbs;
-                quotion = 1;
-                result += quotion;
-            }
-            else
-                break;
-        }
-    }
-
-    return if(isNegative)  -result else result;
 }
+
+
+
 
 
 
