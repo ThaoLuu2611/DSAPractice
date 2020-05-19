@@ -1,6 +1,6 @@
 package JavaCode;
 
-public class DevideTwoInt {
+public class  DevideTwoInt {
     //dont use division, multiplication
     public int divide(int dividend, int divisor) {
 

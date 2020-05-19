@@ -27,10 +27,13 @@ fun main() {
     System.out.println("QueueExample 7");
     System.out.println("Lamda Express 8");
     System.out.println("Stream 9");
+    System.out.println("Fraction to Decimal 10");
+    System.out.println("Merge intervals 11 ");
 
     var case: Int;
     var reader = Scanner(System.`in`);
-    println("\n\nEnter case\n\n");
+    println("\nEnter case\n");
+
     var i = reader.nextInt();
     var myCollection = Algorithm();
 
@@ -58,16 +61,28 @@ fun main() {
         }
         7 -> {
             var queueExample = QueueExample();
+           // queueExample.printQueue();
+            queueExample.printPriorityQueue();
         }
         8 -> {
             var lambdaExp = LambdaExp();
             lambdaExp.callImplementation();
             lambdaExp.lambdaWithoutParameter();
             lambdaExp.lambdaWithParameter();
+            lambdaExp.printList()
         }
         9 -> {
             var stream = StreamExp();
             stream.printStream();
+        }
+        10 -> {
+            var divideFraction = DivideFraction();
+            divideFraction.printFraction()
+        }
+
+        11 -> {
+            var mergeIntervals = MergeIntervals();
+            mergeIntervals.printMergeIntervals();
         }
     }
 }

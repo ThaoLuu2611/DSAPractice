@@ -1,5 +1,9 @@
 package JavaCode;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class LambdaExp {
     interface InternetConnection{
         public void internetListener();
@@ -15,6 +19,18 @@ public class LambdaExp {
             System.out.println("I don't connected to the internet");
         };
         myInternet.internetListener();
+    }
+
+    public void printList(){
+        System.out.println("\nsort list\n");;
+        List<Integer> list = new ArrayList();
+        list.add(2);
+        list.add(34);
+        list.add(24);
+        list.add(222);
+        list.add(23);
+        Collections.sort(list, (o1,o2)->  o1.compareTo(o2));
+        list.forEach(value -> System.out.println("value of list = "+value));
     }
 
     public void lambdaWithParameter(){
