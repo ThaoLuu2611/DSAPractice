@@ -105,9 +105,9 @@ public class DepthFirstSearch {
             if(root.left != null) stack.push(root.left);
             if(root.right != null) stack.push(root.right);
         }
-
         return list;
     }
+
     public List<Integer> postorderTraversal1(Node root) {
         List<Integer> list = new LinkedList();
         Stack<Node> stack = new Stack();

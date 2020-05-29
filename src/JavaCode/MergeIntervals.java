@@ -19,11 +19,11 @@ public class MergeIntervals {
                 graph.put(interval, new LinkedList<>());
             }
 
-            for (int[] interval1 : intervals) {
-                for (int[] interval2 : intervals) {
-                    if (overlap(interval1, interval2)) {
-                        graph.get(interval1).add(interval2);
-                        graph.get(interval2).add(interval1);
+            for(int i = 0; i < intervals.length - 1 ; i++) {
+                for(int j = i+1; j < intervals.length; j++){
+                    if (overlap(intervals[i], intervals[j])) {
+                        graph.get(intervals[i]).add(intervals[j]);
+                        graph.get(intervals[j]).add(intervals[i]);
                     }
                 }
             }
@@ -31,7 +31,8 @@ public class MergeIntervals {
 
         // merges all of the nodes in this connected component into one interval.
         private int[] mergeNodes(List<int[]> nodes) {
-            int minStart = nodes.get(0)[0];
+            int minStart = nodes.get(0
+            )[0];
             for (int[] node : nodes) {
                 minStart = Math.min(minStart, node[0]);
             }
@@ -105,6 +106,10 @@ public class MergeIntervals {
             int [][] mergeIntervals = merge(intervals);
             for(int i = 0;  i < mergeIntervals.length; i++)
                 System.out.println("merge interval = "+ Arrays.toString(mergeIntervals[i]));
+            int[][] intervals1 = new int[][]{{2,3},{4,5},{6,7},{8,9},{1,10}};
+            Arrays.sort(intervals1, (a,b) -> Integer.compare(a[0], b[0]));
+            for(int i = 0; i < intervals1.length; i++)
+                System.out.println("after sort = "+Arrays.toString(intervals1[i]));
         }
     }
 

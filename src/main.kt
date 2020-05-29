@@ -1,5 +1,7 @@
 import JavaCode.*
+import KotlinCode.CombinationsSumKotlin
 import java.util.Scanner;
+
 
 fun intersection(nums1: IntArray, nums2: IntArray): IntArray {
     var s1 = mutableSetOf<Int>();
@@ -29,6 +31,8 @@ fun main() {
     System.out.println("Stream 9");
     System.out.println("Fraction to Decimal 10");
     System.out.println("Merge intervals 11 ");
+    System.out.println("Combination sum 12");
+    System.out.println("Collection 13")
 
     var case: Int;
     var reader = Scanner(System.`in`);
@@ -83,6 +87,19 @@ fun main() {
         11 -> {
             var mergeIntervals = MergeIntervals();
             mergeIntervals.printMergeIntervals();
+        }
+
+        12 -> {
+           var combinationsSum = CombinationsSum();
+        //    combinationsSum.test();
+
+            var combinationsSumKotlin = CombinationsSumKotlin();
+            combinationsSum.test();
+
+        }
+        13 -> {
+            var collection = MyCollections();
+            collection.testCollections();
         }
     }
 }

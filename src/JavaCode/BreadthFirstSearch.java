@@ -44,6 +44,25 @@ public class BreadthFirstSearch {
         }
     }
 
+    void breadth_first(Node node){
+        Queue<Node> queue = new LinkedList();
+            queue.add(node);
+        breadh_first_search_recursive(queue);
+    }
+
+    void breadh_first_search_recursive(Queue<Node> queue){
+        if(queue.isEmpty())
+            return;
+        Node node = queue.remove();
+        System.out.println(" "+node.value);
+        if(node.left != null)
+            queue.add(node.left);
+        if(node.right != null)
+            queue.add(node.right);
+        breadh_first_search_recursive(queue);
+
+    }
+
 
     public void printTree() {
         Node node = new Node(27);
@@ -55,6 +74,8 @@ public class BreadthFirstSearch {
         insert(node, 42);
         //displayBFS(node);
         displayLineOrder(node);
+        System.out.println("breadh frist search recursively");
+        breadth_first(node);
     }
 
 }
