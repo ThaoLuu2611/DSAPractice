@@ -1,4 +1,5 @@
 import JavaCode.*
+import KotlinCode.CollectionsKotlin
 import KotlinCode.CombinationsSumKotlin
 import java.util.Scanner;
 
@@ -20,6 +21,8 @@ fun intersection(nums1: IntArray, nums2: IntArray): IntArray {
 }
 
 fun main() {
+
+
     System.out.println("BreadFirstSearch 1");
     System.out.println("DeptFirstSearch 2");
     System.out.println("DevideTwoInt 3");
@@ -33,6 +36,8 @@ fun main() {
     System.out.println("Merge intervals 11 ");
     System.out.println("Combination sum 12");
     System.out.println("Collection 13")
+    System.out.println("Three sum list 14")
+    System.out.println("Collection kotlin 15")
 
     var case: Int;
     var reader = Scanner(System.`in`);
@@ -64,6 +69,7 @@ fun main() {
             var stackExample = StackExample()
         }
         7 -> {
+
             var queueExample = QueueExample();
            // queueExample.printQueue();
             queueExample.printPriorityQueue();
@@ -100,6 +106,16 @@ fun main() {
         13 -> {
             var collection = MyCollections();
             collection.testCollections();
+        }
+
+        14 -> {
+            var threeSum = ThreeSum();
+            threeSum.test();
+        }
+        15 -> {
+            var collectionsKotlin = CollectionsKotlin();
+            collectionsKotlin.test();
+            collectionsKotlin.collections();
         }
     }
 }

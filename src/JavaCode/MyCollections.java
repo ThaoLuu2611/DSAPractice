@@ -19,9 +19,32 @@ public class MyCollections {
         list.add(new int[]{211,311});
         list.add(new int[]{21,311});
         list.add(new int[]{1661,3213});
-        Collections.sort(list,  new ListComparator());
+        List<int[]> copyList = new ArrayList<>(list);//new ArrayList();
+        Collections.sort(copyList,  new ListComparator());
+        //Collections.sort(list,  new ListComparator());
         for(int i = 0; i < list.size(); i++)
             System.out.println(" element = "+list.get(i)[0] +" "+list.get(i)[1]);
+        for(int i = 0; i < list.size(); i++)
+            System.out.println(" copy list element = "+copyList.get(i)[0] +" "+copyList.get(i)[1]);
+        int[] myList = new int[]{1661,3213};
+        if(list.contains(myList))
+            System.out.println(" co chua contain");
+        else
+            System.out.println(" khong co chua");
+
+        List<List<Integer>> list2 = new ArrayList();
+        List<Integer> l1 = new ArrayList<>();
+        l1.add(12);
+        l1.add(23);
+
+        List<Integer> l2 = new ArrayList<>();
+        l2.add(12);
+        l2.add(23);
+        list2.add(l1);
+        if(list2.contains(l2))
+            System.out.println("list 2 contain l1");
+        else
+            System.out.println("list 2 ko contain l1");
     }
 
     class ListComparator implements Comparator<int[]> {
