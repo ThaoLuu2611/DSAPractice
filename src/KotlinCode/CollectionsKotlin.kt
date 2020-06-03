@@ -26,6 +26,31 @@ class CollectionsKotlin{
             println(list.get(i).toString());
         }
 
+        println("sort collection");
+        //   list.groupBy {it.value  }.toSortedMap()
+        for(i in list.indices){
+            println(list.get(i).toString());
+        }
+
+        println("=======================Group by======================");
+        //group by: group original collection by key, return map of group of key with associated list of corresponding elements;
+        //preserve the iteration order of key produced from the collection
+
+        var listX = list.groupBy { it.x }
+        println("list group buy point x "+ listX);
+
+        var names = listOf("thaomoc","thu","Peter","Hoa","john kennedy");
+        var  namesLength = names.groupBy { it.length }
+        println("names group by length "+ namesLength);
+        println("names key group by length "+ namesLength.keys);
+
+        for( key in  namesLength.keys){
+            println(" k: " + key +" list value = "+ namesLength[key]);
+        }
+        for( key in  namesLength.keys){
+            println("first value of list " + namesLength[key]?.get(0))
+        }
+
 
     }
 }
