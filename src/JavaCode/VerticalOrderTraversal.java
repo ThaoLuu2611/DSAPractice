@@ -22,9 +22,10 @@ class VerticalOrderTraversal {
         List<List<Integer>> list = new ArrayList();
         for(int i: map.keySet())
         {   List<int[]> myList = map.get(i);
-            Collections.sort(myList,new ListComparator());
+           // Collections.sort(myList,new ListComparator());
             Collections.sort(myList,(a,b) -> { return a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : (0)); });
             List<Integer> verticalList = new ArrayList();
+
             for(int j = 0; j < myList.size(); j++){
                 verticalList.add(myList.get(j)[1]);
             }

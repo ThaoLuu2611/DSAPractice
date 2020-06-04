@@ -38,6 +38,7 @@ fun main() {
     System.out.println("Collection 13")
     System.out.println("Three sum list 14")
     System.out.println("Collection kotlin 15")
+    System.out.println("Set read only file 16")
 
     var case: Int;
     var reader = Scanner(System.`in`);
@@ -114,8 +115,14 @@ fun main() {
         }
         15 -> {
             var collectionsKotlin = CollectionsKotlin();
-            collectionsKotlin.test();
-            collectionsKotlin.collections();
+            //collectionsKotlin.test();
+            //collectionsKotlin.collections();
+           // collectionsKotlin.collectionSort()
+            collectionsKotlin.collectionSort2()
+        }
+        16 -> {
+            var readOnlyFile = ReadOnlyFile();
+            readOnlyFile.createFile()
         }
     }
 }

@@ -1,9 +1,6 @@
 package JavaCode;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class MyCollections {
     public void testCollections(){
@@ -53,5 +50,18 @@ public class MyCollections {
             return a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : (0));
         }
     }
+
+    public class Person{
+        String name;
+        int age;
+        String address;
+        Person(String name, int age, String address){
+            this.name = name;
+            this.age = age;
+            this.address = address;
+        }
+    }
+
+
 
 }
