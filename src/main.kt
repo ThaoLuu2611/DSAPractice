@@ -106,7 +106,8 @@ fun main() {
         }
         13 -> {
             var collection = MyCollections();
-            collection.testCollections();
+            //collection.testCollections();
+            collection.oldSort();
         }
 
         14 -> {
@@ -118,7 +119,8 @@ fun main() {
             //collectionsKotlin.test();
             //collectionsKotlin.collections();
            // collectionsKotlin.collectionSort()
-            collectionsKotlin.collectionSort2()
+            //collectionsKotlin.collectionSort2()
+            collectionsKotlin.test4()
         }
         16 -> {
             var readOnlyFile = ReadOnlyFile();

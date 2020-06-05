@@ -1,5 +1,8 @@
 package KotlinCode
 
+import java.util.*
+import kotlin.collections.ArrayList
+
 data class Points(var x: Int, var y: Int, var `val`: Int)
 
 class CollectionsKotlin{
@@ -104,13 +107,43 @@ class CollectionsKotlin{
             println(" print " + it);
         }
 
+/*
         list.groupBy{it.x}.entries.forEach{
             println(" print entry " + it);
-
-            println(" print entry after sorte " + it.value.sortedWith(compareBy({it.y},{it.`val`})));
+            it.value.sortedWith(compareBy({it.y},{it.`val`}))
+            println(" print entry after sorte " + it.value));
         }
+*/
+
+        var valueList = arrayListOf<List<Int>>()
+        list.groupBy{it.x}.entries.forEach {
+                var sortedList = it.value.sortedWith(compareBy({it.y},{it.`val`}))
+            println("sorted list = "+sortedList);
+            println("x value     = "+it.value);
+                valueList.add(sortedList.map { it.`val` })
+             //   println("sort = "+it.value);
+
+        }
+
+        for(i in 0..valueList.size - 1)
+            println("value list = ${valueList.get(i)}")
      //   println("map = "+list.map{it.`val`});
     }
+
+    public fun test4 (){
+        var list = mutableListOf<Pair<Int,Int>>();
+        list.add(Pair(4,234))
+        list.add(Pair(1,34))
+        list.add(Pair(1,24))
+        list.add(Pair(1,124))
+        list.add(Pair(1,4))
+        list.add(Pair(2,234))
+        list.add(Pair(5,234))
+        list.sortWith(compareBy({it.first},{it.second}))
+        for(i in list.indices)
+            println(list.get(i))
+    }
+
 
 }
 

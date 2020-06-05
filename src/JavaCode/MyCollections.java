@@ -51,6 +51,8 @@ public class MyCollections {
         }
     }
 
+
+
     public class Person{
         String name;
         int age;
@@ -60,8 +62,31 @@ public class MyCollections {
             this.age = age;
             this.address = address;
         }
+
+        @Override
+        public String toString() {
+            return "Person{"+"name="+this.name+", age="+this.age+", address="+address+"}";
+        }
     }
 
-
-
+    public void oldSort() {
+        List<Person> person = new ArrayList<>();
+        person.add(new Person("Thao",134,"Ha Noi"));
+        person.add(new Person("Minh Thao",22, "Ha Noi"));
+        person.add(new Person("Nguyen Thao",44,"Ha Noi"));
+        person.add(new Person("Anh Thao",24,"Ha Noi"));
+        person.add(new Person("Binh Thao",334,"Ha Noi"));
+/*        Collections.sort(person, new Comparator<Person>() {
+            @Override
+            public int compare(Person h1, Person h2) {
+                //return h1.age - h2.age;
+                return h1.name.compareTo(h2.name);
+            }
+        });
+        person.forEach(System.out::println);*/
+        //lambda
+        person.sort((a,b)-> a.name.compareTo(b.name));;
+      //  person.sort((a,b) -> a.age - b.age);
+        person.forEach(System.out::println);
+    }
 }

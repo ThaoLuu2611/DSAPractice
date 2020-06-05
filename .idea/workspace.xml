@@ -215,7 +215,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main.kt</url>
-          <line>130</line>
+          <line>132</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
